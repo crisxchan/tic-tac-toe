@@ -1,5 +1,4 @@
 let playerFactory = (name, assignedXO, turn) => {
-    
     return { name, assignedXO, turn };
 };
 
@@ -54,7 +53,7 @@ const displayController = (() => {
 
     const winGame = (winner) => {
         overlay.classList.add('active');
-        overlay.innerHTML = `${winner}<br>WON`
+        overlay.innerHTML = `${winner}<br>WINS`
     }
 
     return { overlay, drawGame, winGame };
@@ -99,6 +98,7 @@ const gameFlowModule = (() => {
 
             if (a == b && b == c) {
                 gameEnd(player);
+                return;
             }
         }
         
