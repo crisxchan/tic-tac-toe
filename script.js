@@ -54,7 +54,7 @@ const displayController = (() => {
 
     const winGame = (winner) => {
         overlay.classList.add('active');
-        overlay.innerHTML = `${winner} WON`
+        overlay.innerHTML = `${winner}<br>WON`
     }
 
     return { overlay, drawGame, winGame };
@@ -118,11 +118,11 @@ const gameFlowModule = (() => {
     const gameEnd = (winner = '') => {
         switch(winner.name) {
             case playerA.name:
-                displayController.winGame(playerA.name);
+                displayController.winGame(playerA.assignedXO);
                 break;
 
             case playerB.name:
-                displayController.winGame(playerB.name);
+                displayController.winGame(playerB.assignedXO);
                 break;
 
             default:
